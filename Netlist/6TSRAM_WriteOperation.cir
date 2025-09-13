@@ -1,0 +1,37 @@
+*** 6T SRAM CELL Write Operation***
+.subckt inverter 1 3 2
+M1 2 1 0 0 nmod w=10u l=1u
+M2 2 1 3 3 pmod w=20u l=1u
+.ends
+
+* MOSFET models (global Definition)
+.model nmod nmos level=54 version=4.7
+.model pmod pmos level=54 version=4.7
+
+
+* Power supply
+Vdd 3 0 5v
+
+* Wordline (WL control)
+Vwl 12 0 pulse(0 5 0 0 0 20u 40u)
+
+* Bit-lines
+Vbl 11 0 pulse(0 5 0 0 0 40u 80u)
+Vblbar 16 0 pulse(5 0 0 0 0 40u 80u)
+
+* define two pass transistors
+M1 13 12 11 0 nmod w=10u l=1u ; Q / BL
+M2 15 12 16 0 nmod w=10u l=1u ; QB/BLbar
+
+*define two cross coupled inverters from above subckt
+x_inverter1 15 3 13 inverter
+x_inverter2 13 3 15 inverter
+
+*simulation
+.tran 0.1u 200u
+.control
+run
+plot v(11) v(16)+6 v(12)+12 v(13)+18 v(15)+24
+.endc
+.end
+

@@ -1,0 +1,49 @@
+*** 6T SRAM CELL READ OPERATION - CORRECTED ***
+
+.subckt inverter in vdd out
+ M1 out in 0 0 nmod w=20u l=1u ; pull up transistor
+ M2 out in vdd vdd pmod w=20u l=1u ; pull down transistor
+.ends
+
+.model nmod nmos level=1
+.model pmod pmos level=1
+
+* Set the initial stored value: Q=1 (5V), QB=0 (0V)
+.ic v(13)=5 v(15)=0
+
+* Power supply
+Vdd 3 0 5
+
+* Wordline pulse to enable the read operation.
+* It starts low, goes high at 20ns to start the read.
+Vwl 12 0 pulse(0 5 20n 1n 1n 20n 40n)
+
+* --- MAJOR CORRECTIONS START HERE ---
+
+* 1. Model the bitline capacitance. This is what holds the precharge.
+Cbl 11 0 50f
+Cblbar 16 0 50f
+
+* 2. Simulate the "precharge" state by setting the initial
+* voltage of the bitlines to Vdd.
+.ic v(11)=2.5 v(16)=2.5
+
+* --- MAJOR CORRECTIONS END HERE ---
+
+* Access transistors
+M1 13 12 11 0 nmod w=10u l=1u ; Q (node 13) <-> BL (node 11)
+M2 15 12 16 0 nmod w=10u l=1u ; QB (node 15) <-> BLB (node 16)
+
+* Cross-coupled inverters (SRAM cell latch)
+xinv_right 15 3 13 inverter ; Input=QB, Output=Q
+xinv_left  13 3 15 inverter ; Input=Q, Output=QB
+
+* Simulation over nanoseconds is more realistic for a read operation
+.tran 1n 100n
+
+.control
+run
+* Plot the bitlines, the wordline, and the internal nodes to verify
+plot v(11) v(16)+6 v(12)+12 v(13)+18 v(15)+24
+.endc
+.end

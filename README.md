@@ -36,7 +36,7 @@ File: [`netlist/6T_SRAM_write.spice`](Netlist/6TSRAM_WriteOperation.cir)
 - WL enabled → storage node pulls one bitline slightly lower.
 - Sense amplifiers in real SRAM arrays detect this small difference.
 
-File: [`netlist/6T_SRAM_read.spice`](netlist/6T_SRAM_read.spice)
+File: [`netlist/6T_SRAM_read.spice`](Netlist/6TSRAM_ReadOperation.cir)
 
 ---
 

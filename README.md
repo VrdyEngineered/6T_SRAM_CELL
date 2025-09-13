@@ -29,7 +29,7 @@ The same layout and circuit supports both **read** and **write** operations depe
 - Data is forced from BL/BL̅ into the storage nodes.
 - The cell overwrites the previous stored value.
 
-File: [`netlist/6T_SRAM_write.spice`](6TSRAM_WriteOperation)
+File: [`netlist/6T_SRAM_write.spice`](6TSRAM_WriteOperation.cir)
 
 ### ✅ Read Operation Netlist
 - Both BL and BL̅ precharged.

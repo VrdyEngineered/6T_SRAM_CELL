@@ -60,7 +60,7 @@ The layout was created based on **lambda design rules** and Foundry used was 0.1
 - The storage node `Q` follows BL and flips accordingly.
 - Measured **write delay**: ~270–310 ps.
 
-![Write Waveform](Layout_Design/Output_file/Write_Operation.png)
+![Write Waveform](Layout_Design/Output_files/Write_Operation.png)
 
 ### 📝 Read Operation
 - Both BL and BL̅ precharged to ~Vdd/2.

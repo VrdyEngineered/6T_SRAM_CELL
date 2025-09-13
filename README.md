@@ -41,7 +41,7 @@ File: [`netlist/6T_SRAM_read.spice`](Netlist/6TSRAM_ReadOperation.cir)
 ---
 
 ## 🖼 Layout Design
-The layout was created based on **lambda design rules** and scaled to **45nm technology node**.  
+The layout was created based on **lambda design rules** and Foundry used was 0.18um/180nm.  
 
 - **Inputs/Outputs:**  
   - `WL` → Wordline  
@@ -49,7 +49,7 @@ The layout was created based on **lambda design rules** and scaled to **45nm tec
   - `Q`, `Q̅` → Storage nodes  
   - `Vdd`, `Vss` → Power rails  
 
-![Layout Example](docs/Layout_Screenshot.png)
+![Layout Example](Layout_Design/6T_SRAMCELL_LayoutDesign.png)
 
 ---
 
@@ -60,20 +60,20 @@ The layout was created based on **lambda design rules** and scaled to **45nm tec
 - The storage node `Q` follows BL and flips accordingly.
 - Measured **write delay**: ~270–310 ps.
 
-![Write Waveform](docs/Write_Waveform.png)
+![Write Waveform](Layout_Design/Output_file/Write_Operation.png)
 
 ### 📝 Read Operation
 - Both BL and BL̅ precharged to ~Vdd/2.
 - When WL is enabled, one bitline discharges slightly depending on stored value.
 - Confirms **correct read functionality**.
 
-![Read Waveform](docs/Read_Waveform.png)
+![Read Waveform](Netlist/Output_files/Read_Operation.png)
 
 ---
 
 ## 🛠 Tools Used
-- **Schematic & Netlist:** eSim / Ngspice  
-- **Layout:** Cadence Virtuoso (lambda rules, 45nm tech node)  
+- ** Netlist:** Ngspice  
+- **Layout:** Microwind (lambda rules, 180nm tech node)  
 - **Simulation:** Ngspice transient analysis  
 
 ---

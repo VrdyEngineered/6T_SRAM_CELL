@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="SRAM_6T_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="SRAM_6T_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="11,024 ps"></ZoomStartTime>
+      <ZoomEndTime time="11,040 ps"></ZoomEndTime>
+      <Cursor1Time time="40,000 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="99"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/SRAM_6T_tb/WL" type="logic">
+      <obj_property name="ElementShortName">WL</obj_property>
+      <obj_property name="ObjectShortName">WL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SRAM_6T_tb/BL" type="logic">
+      <obj_property name="ElementShortName">BL</obj_property>
+      <obj_property name="ObjectShortName">BL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SRAM_6T_tb/BR" type="logic">
+      <obj_property name="ElementShortName">BR</obj_property>
+      <obj_property name="ObjectShortName">BR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SRAM_6T_tb/BL_driver" type="logic">
+      <obj_property name="ElementShortName">BL_driver</obj_property>
+      <obj_property name="ObjectShortName">BL_driver</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SRAM_6T_tb/BR_driver" type="logic">
+      <obj_property name="ElementShortName">BR_driver</obj_property>
+      <obj_property name="ObjectShortName">BR_driver</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SRAM_6T_tb/BL_en" type="logic">
+      <obj_property name="ElementShortName">BL_en</obj_property>
+      <obj_property name="ObjectShortName">BL_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SRAM_6T_tb/BR_en" type="logic">
+      <obj_property name="ElementShortName">BR_en</obj_property>
+      <obj_property name="ObjectShortName">BR_en</obj_property>
+   </wvobject>
+</wave_config>

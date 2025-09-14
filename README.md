@@ -21,6 +21,9 @@ The same layout and circuit supports both **read** and **write** operations depe
   - Bit-line capacitances for read simulation  
 
 ---
+## Conventional 6T SRAM CELL
+![Layout Example](Layout_Design/Conventional-6T-SRAM-CELL.png)
+---
 
 ## ⚡ Netlists
 
